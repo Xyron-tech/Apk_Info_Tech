@@ -2117,7 +2117,22 @@ cs-root {
 
 .section h2 span,
 .values-section h2 span{
-  color:var(--gold);
+  color:#facc15 !important;
+}
+
+.overlay-section h2 {
+  font-size: 42px;
+  font-weight: 700;
+  color: #1a1a2e !important;
+  text-align: center;
+  margin-bottom: 40px;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.overlay-section h2 span {
+  color: #facc15 !important;
 }
 
 .grid-2{
@@ -2208,11 +2223,13 @@ cs-root {
 .card h3{
   text-align:center;
   margin:15px 15px 10px;
-  color:var(--navy);
+  color:#1a1a2e !important;
   font-size:20px;
   font-weight:700;
   display:block !important;
   visibility:visible !important;
+  opacity:1 !important;
+  line-height:1.4;
 }
 
 .card p{
