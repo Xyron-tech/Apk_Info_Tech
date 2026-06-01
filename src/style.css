@@ -2723,6 +2723,12 @@ cs-root {
   z-index:10;
   background:#eef0fb;
 }
+
+.s2{
+  z-index:20;
+  background:#eef0fb;
+}
+
 .s3{
   z-index:30;
   background:#eef0fb;
