@@ -1,3 +1,5 @@
+
+
 import director1 from "../assets/director1.webp";
 import director2 from "../assets/director2.webp";
 
@@ -9,7 +11,7 @@ import cfo from "../assets/CFO.webp";
 import cmo from "../assets/CMO.webp";
 import cmo2 from "../assets/CMO2.webp";
 
-const Card = ({ image, name, role, quote, tags }) => (
+const Card = ({ image, name, designation, content }) => (
   <div className="card">
 
     <div className="card-top-line"></div>
@@ -18,22 +20,12 @@ const Card = ({ image, name, role, quote, tags }) => (
 
     <h3>{name}</h3>
 
-    <p>{role}</p>
-
-    <div className="tag-wrap">
-      {tags.map((tag, index) => (
-        <span className="tag" key={index}>
-          {tag}
-        </span>
-      ))}
-    </div>
-
     <div className="quote">
-      "{quote}"
+      {content}
     </div>
 
     <span className="company-badge">
-      APK INFOTECH
+      {designation}
     </span>
 
   </div>
@@ -43,38 +35,8 @@ export default function About() {
   return (
     <div className="about-page">
 
-
-      {/* CEO */}
-      <section className="section">
-
-        <h2>
-          Chief <span>Executive Officer</span>
-        </h2>
-
-        <div className="grid-center">
-
-          <div className="single-card">
-
-            <Card
-              image={ceo}
-              name="Chief Executive Officer"
-              role="Vision & Strategy"
-              quote="Transforming ideas into impactful solutions."
-              tags={[
-                "Vision",
-                "Leadership",
-                "Growth"
-              ]}
-            />
-
-          </div>
-
-        </div>
-
-      </section>
-      
       {/* DIRECTORS */}
-      <section className="section">
+      <section className="overlay-section s1">
 
         <h2>
           Our <span>Directors</span>
@@ -84,112 +46,101 @@ export default function About() {
 
           <Card
             image={director1}
-            name="Director"
-            role="Leadership & Growth"
-            quote="Driving innovation and long term growth."
-            tags={[
-              "Leadership",
-              "Strategy",
-              "Innovation"
-            ]}
+            name="AMBIKA A"
+            designation="DIRECTOR"
+            content="Steering the company with vision and strategic leadership while driving innovation and long-term business growth."
           />
 
           <Card
             image={director2}
-            name="Director"
-            role="Operations & Management"
-            quote="Building strong teams and sustainable success."
-            tags={[
-              "Operations",
-              "Management",
-              "Growth"
-            ]}
+            name="ZIYAD ZAHIR HUSSAN"
+            designation="DIRECTOR"
+            content="Guiding organizational growth and building sustainable success through strong leadership and management."
           />
 
         </div>
 
       </section>
 
-      {/* LEADERSHIP */}
-      <section className="section">
+      {/* CEO */}
+      <section className="overlay-section s2">
 
         <h2>
-          Leadership <span>Team</span>
+          Our <span>Chief Executive</span>
+        </h2>
+
+        <div className="grid-center">
+
+          <div className="single-card">
+
+            <Card
+              image={ceo}
+              name="DHAYANITHI ALAGESAN"
+              designation="CEO"
+              content="Driving the company vision, culture, and long-term success through innovation and strategic decision making."
+            />
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* LEADERSHIP TEAM */}
+      <section className="overlay-section s3">
+
+        <h2>
+          Our <span>Leadership Team</span>
         </h2>
 
         <div className="grid-3">
 
           <Card
             image={coo}
-            name="Chief Operating Officer"
-            role="Operations"
-            quote="Optimizing performance through operational excellence."
-            tags={[
-              "Operations",
-              "Planning",
-              "Execution"
-            ]}
+            name="YASIN S"
+            designation="COO"
+            content="Streamlining operations and ensuring organizational efficiency to support growth and performance."
           />
 
           <Card
             image={cto}
-            name="Chief Technology Officer"
-            role="Technology"
-            quote="Building scalable technology for tomorrow."
-            tags={[
-              "Technology",
-              "AI",
-              "Development"
-            ]}
+            name="MAGESWARAN B"
+            designation="CTO"
+            content="Driving innovation and technical excellence while building scalable technology solutions for the future."
           />
 
           <Card
             image={cfo}
-            name="Chief Financial Officer"
-            role="Finance"
-            quote="Ensuring sustainable growth through smart decisions."
-            tags={[
-              "Finance",
-              "Budget",
-              "Analytics"
-            ]}
+            name="KAMESHVARAN M"
+            designation="CFO"
+            content="Managing financial strategy and ensuring sustainable growth through smart planning and fiscal discipline."
           />
 
         </div>
 
       </section>
 
-      {/* MARKETING */}
-      <section className="section">
+      {/* MARKETING TEAM */}
+      <section className="overlay-section s4">
 
         <h2>
-          Marketing <span>Team</span>
+          Our <span>Marketing Team</span>
         </h2>
 
         <div className="grid-2">
 
           <Card
             image={cmo}
-            name="Marketing Head"
-            role="Marketing Strategy"
-            quote="Connecting innovation with the right audience."
-            tags={[
-              "Marketing",
-              "Campaigns",
-              "Branding"
-            ]}
+            name="ATTRAMBAKAM ZIYAM KUMAR"
+            designation="CMO"
+            content="Building brand presence and creating impactful marketing strategies that connect with the right audience."
           />
 
           <Card
             image={cmo2}
-            name="Brand Manager"
-            role="Brand Development"
-            quote="Creating memorable brand experiences."
-            tags={[
-              "Brand",
-              "Content",
-              "Growth"
-            ]}
+            name="SUNIL"
+            designation="CMO"
+            content="Driving digital campaigns and audience engagement to strengthen brand growth and visibility."
           />
 
         </div>
@@ -197,7 +148,7 @@ export default function About() {
       </section>
 
       {/* VALUES */}
-      <section className="values-section">
+      <section className="overlay-section values-section s5">
 
         <h2>
           Our <span>Core Values</span>
