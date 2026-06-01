@@ -2201,7 +2201,8 @@ cs-root {
   object-position:center;
   background:#fff;
   padding:10px;
-  display:block;
+  display:block !important;
+  visibility:visible !important;
 }
 
 .card h3{
@@ -2210,6 +2211,8 @@ cs-root {
   color:var(--navy);
   font-size:20px;
   font-weight:700;
+  display:block !important;
+  visibility:visible !important;
 }
 
 .card p{
@@ -2230,10 +2233,12 @@ cs-root {
   font-size:14px;
   font-weight:400;
   line-height:1.7;
+  display:block !important;
+  visibility:visible !important;
 }
 
 .company-badge{
-  display:block;
+  display:block !important;
   width:max-content;
 
   margin:10px auto 18px;
@@ -2246,6 +2251,7 @@ cs-root {
 
   font-size:12px;
   font-weight:700;
+  visibility:visible !important;
 }
 
 /* VALUES */
