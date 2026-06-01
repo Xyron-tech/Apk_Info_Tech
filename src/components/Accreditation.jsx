@@ -42,42 +42,6 @@ export default function Accreditation() {
 
             {/* Tags */}
             <div className="acc-tags">
-              <span className="acc-tag">✓ Govt. Registered</span>
-              <span className="acc-tag">✓ Pvt. Ltd. Company</span>
-              <span className="acc-tag">✓ Legally Compliant</span>
-              <span className="acc-tag">✓ MCA Verified</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Side decorative cards */}
-        <div className="acc-side-cards">
-          <div className="acc-side-card">
-            <div className="acc-side-icon">🏛️</div>
-            <div>
-              <div className="acc-side-title">Incorporation</div>
-              <div className="acc-side-val">Private Limited</div>
-            </div>
-          </div>
-          <div className="acc-side-card">
-            <div className="acc-side-icon">📋</div>
-            <div>
-              <div className="acc-side-title">Registration</div>
-              <div className="acc-side-val">MCA Portal</div>
-            </div>
-          </div>
-          <div className="acc-side-card">
-            <div className="acc-side-icon">✅</div>
-            <div>
-              <div className="acc-side-title">Status</div>
-              <div className="acc-side-val">Active & Verified</div>
-            </div>
-          </div>
-          <div className="acc-side-card">
-            <div className="acc-side-icon">🇮🇳</div>
-            <div>
-              <div className="acc-side-title">Jurisdiction</div>
-              <div className="acc-side-val">Government of India</div>
             </div>
           </div>
         </div>

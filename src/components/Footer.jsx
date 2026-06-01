@@ -270,7 +270,7 @@ const Footer = () => {
                                     rel="noopener noreferrer"
                                     className="direction-btn"
                                 >
-                                    Get Direction
+                                    <EnvironmentOutlined /> Get Direction
                                 </a>
                             )}
                         </div>
@@ -279,7 +279,7 @@ const Footer = () => {
             </div>
             <div className="footer-bottom">
                 <p>
-                    © 2025 APK INFOTECH IT SOLUTIONS.
+                    © 2026 APK INFOTECH IT SOLUTIONS.
                     All rights reserved.
                 </p>
             </div>
