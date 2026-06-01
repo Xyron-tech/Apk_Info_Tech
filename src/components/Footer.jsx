@@ -104,10 +104,10 @@ const contactInfo = [
     {
         type: "location",
         value:
-            "No 65, 5th street, Ram Nagar, Mannivakkam, Chennai - 600048",
+            "No 65, 3rd floor, 5th street, Ram Nagar, Mannivakkam, Chennai - 048",
 
         mapLink:
-            "https://www.google.com/maps/search/?api=1&query=No+65+5th+Street+Ram+Nagar+Mannivakkam+Chennai+600048"
+            "https://www.google.com/maps/search/?api=1&query=No+65+3rd+floor+5th+Street+Ram+Nagar+Mannivakkam+Chennai+048"
     }
 
 ];
