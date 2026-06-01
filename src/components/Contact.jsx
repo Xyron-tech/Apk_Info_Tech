@@ -64,11 +64,9 @@ export default function Contact() {
             <label>Service</label>
             <select>
               <option>Select Service</option>
-              <option>Web Development</option>
-              <option>App Development</option>
-              <option>UI / UX Design</option>
               <option>Internship</option>
-              <option>Placement Support</option>
+              <option>Client Services</option>
+              <option>Placement Services</option>
             </select>
 
             <label>Message</label>
