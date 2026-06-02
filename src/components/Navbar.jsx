@@ -75,6 +75,7 @@ const Navbar = () => {
           <div className="logo-text">
             <h2>APK INFOTECH</h2>
             <p>IT SOLUTIONS PVT LTD</p>
+            <p className="cin-text">CIN: U85500TN2026PTC192247</p>
           </div>
         </div>
 

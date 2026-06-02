@@ -1,11 +1,18 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import fullStackWebImg from '../assets/full stack web development .webp';
+import agenticAIImg from '../assets/Agentic AI with Gen AI.webp';
+import vlsiDesignImg from '../assets/VLSI Design.webp';
+import cyberSecurityImg from '../assets/Cyber Security.webp';
+import roboticsImg from '../assets/Robotics and PCB Design.webp';
+import placementImg from 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&auto=format&fit=crop&q=80';
+import getImg from 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&auto=format&fit=crop&q=80';
 
 const courses = [
   {
     id: 1, title: 'Full Stack Web Development', category: 'Development',
     duration: '4 Months', mode: 'Online / Offline', level: 'Beginner to Advanced',
-    img: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&auto=format&fit=crop&q=80',
+    img: fullStackWebImg,
     topics: ['HTML · CSS · JS', 'React.js', 'Node.js', 'Express.js', 'MongoDB', 'REST APIs', 'Git & GitHub', 'Deployment'],
     desc: 'Master the MERN stack from scratch. Build production-ready web apps with React, Node.js, MongoDB & Express.',
     badge: { label: 'Development', color: '#3b82f6', bg: '#eff6ff' },
@@ -13,7 +20,7 @@ const courses = [
   {
     id: 2, title: 'Agentic AI with Gen AI', category: 'AI/ML',
     duration: '3 Months', mode: 'Online', level: 'Intermediate',
-    img: 'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=800&auto=format&fit=crop&q=80',
+    img: agenticAIImg,
     topics: ['LangChain', 'OpenAI API', 'Agent Frameworks', 'RAG Systems', 'Vector DBs', 'Prompt Engineering', 'Tool Use', 'Deployment'],
     desc: 'Build next-generation autonomous AI agents using LangChain, OpenAI, and multi-agent frameworks.',
     badge: { label: 'AI/ML', color: '#8b5cf6', bg: '#f5f3ff' },
@@ -21,7 +28,7 @@ const courses = [
   {
     id: 3, title: 'VLSI Design', category: 'Hardware',
     duration: '4 Months', mode: 'Offline', level: 'Intermediate to Advanced',
-    img: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format&fit=crop&q=80',
+    img: vlsiDesignImg,
     topics: ['Digital Logic', 'Verilog / VHDL', 'FPGA Design', 'Synthesis', 'Timing Analysis', 'Place & Route', 'Simulation', 'IC Layout'],
     desc: 'Deep-dive into VLSI design. Master Verilog, FPGA prototyping, synthesis flows, and physical design.',
     badge: { label: 'Hardware', color: '#f59e0b', bg: '#fffbeb' },
@@ -29,7 +36,7 @@ const courses = [
   {
     id: 4, title: 'Cyber Security', category: 'Security',
     duration: '3 Months', mode: 'Online / Offline', level: 'Beginner to Advanced',
-    img: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&auto=format&fit=crop&q=80',
+    img: cyberSecurityImg,
     topics: ['Network Security', 'Kali Linux', 'Penetration Testing', 'OWASP Top 10', 'SOC Basics', 'Malware Analysis', 'Bug Bounty', 'CTF Challenges'],
     desc: 'Hands-on training in ethical hacking, penetration testing, vulnerability assessment, and security hardening.',
     badge: { label: 'Security', color: '#ef4444', bg: '#fef2f2' },
@@ -37,7 +44,7 @@ const courses = [
   {
     id: 5, title: 'Robotics and PCB Design', category: 'Hardware',
     duration: '3 Months', mode: 'Offline', level: 'Beginner to Intermediate',
-    img: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&auto=format&fit=crop&q=80',
+    img: roboticsImg,
     topics: ['Arduino / Raspberry Pi', 'Sensors & Actuators', 'PCB Schematic', 'Altium / KiCad', 'Motor Control', 'IoT Integration', 'Soldering', 'Prototyping'],
     desc: 'Learn robotics fundamentals, PCB schematic design, layout, and fabrication. Build real robots and custom hardware prototypes.',
     badge: { label: 'Hardware', color: '#f59e0b', bg: '#fffbeb' },
@@ -45,7 +52,7 @@ const courses = [
   {
     id: 6, title: 'Placement Readiness Program', category: 'Career',
     duration: '6 Weeks', mode: 'Online / Offline', level: 'All Levels',
-    img: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&auto=format&fit=crop&q=80',
+    img: placementImg,
     topics: ['Resume Building', 'Mock Interviews', 'Aptitude Training', 'Group Discussion', 'LinkedIn Optimization', 'HR Rounds', 'Soft Skills', 'Job Referrals'],
     desc: 'Expert-led mock interviews, resume reviews, aptitude coaching, and direct referrals to our 100+ hiring partner network.',
     badge: { label: 'Career', color: '#10b981', bg: '#ecfdf5' },
@@ -53,7 +60,7 @@ const courses = [
   {
     id: 7, title: 'Graduate Engineering Training (GET)', category: 'Career',
     duration: '2 Months', mode: 'Online / Offline', level: 'Fresh Graduates',
-    img: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&auto=format&fit=crop&q=80',
+    img: getImg,
     topics: ['Core Engineering', 'Industry Exposure', 'Project Work', 'Technical Communication', 'Problem Solving', 'Team Collaboration', 'Domain Specialization', 'Placement Support'],
     desc: 'A bridge program for fresh engineering graduates. Gain domain-specific skills, real project experience, and professional mindset.',
     badge: { label: 'Career', color: '#10b981', bg: '#ecfdf5' },
