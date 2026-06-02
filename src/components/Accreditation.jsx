@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from "../assets/mca-logo.png";
+import logo from "../assets/mca-logo.webp";
 
 export default function Accreditation() {
   return (

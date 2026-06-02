@@ -22,6 +22,11 @@ import Accreditation from "./Accreditation";
 import Contact from "./Contact";
 import Course from "./Course";
 import { Link } from "react-router-dom";
+import fullStackWebImg from '../assets/full-stack-web-development.webp';
+import agenticAIImg from '../assets/agentic-ai-gen-ai.webp';
+import vlsiDesignImg from '../assets/vlsi-design.webp';
+import cyberSecurityImg from '../assets/cyber-security.webp';
+import roboticsImg from '../assets/robotics-pcb-design.webp';
 
 
 const Home = () => {
@@ -80,39 +85,55 @@ const Home = () => {
     ];
 
     const coursesData = [
-
         {
-            title: "Full Stack Development",
-            description:
-                "Frontend and backend development with real projects.",
-            image:
-                "https://images.unsplash.com/photo-1498050108023-c5249f4df085"
+            title: "Full Stack Web Development",
+            category: "Development",
+            duration: "4 Months",
+            description: "Master the MERN stack from scratch. Build production-ready web apps with React, Node.js, MongoDB & Express.",
+            image: fullStackWebImg
         },
-
         {
-            title: "Artificial Intelligence",
-            description:
-                "Learn AI tools, machine learning and automation.",
-            image:
-                "https://images.unsplash.com/photo-1677442136019-21780ecad995"
+            title: "Agentic AI with Gen AI",
+            category: "AI/ML",
+            duration: "3 Months",
+            description: "Build next-generation autonomous AI agents using LangChain, OpenAI, and multi-agent frameworks.",
+            image: agenticAIImg
         },
-
+        {
+            title: "VLSI Design",
+            category: "Hardware",
+            duration: "4 Months",
+            description: "Deep-dive into VLSI design. Master Verilog, FPGA prototyping, synthesis flows, and physical design.",
+            image: vlsiDesignImg
+        },
         {
             title: "Cyber Security",
-            description:
-                "Advanced security concepts and ethical hacking.",
-            image:
-                "https://images.unsplash.com/photo-1510511459019-5dda7724fd87"
+            category: "Security",
+            duration: "3 Months",
+            description: "Hands-on training in ethical hacking, penetration testing, vulnerability assessment, and security hardening.",
+            image: cyberSecurityImg
         },
-
         {
-            title: "UI UX Design",
-            description:
-                "Modern UI/UX designing with Figma and tools.",
-            image:
-                "https://images.unsplash.com/photo-1559028012-481c04fa702d"
+            title: "Robotics and PCB Design",
+            category: "Hardware",
+            duration: "3 Months",
+            description: "Learn robotics fundamentals, PCB schematic design, layout, and fabrication. Build real robots and custom hardware prototypes.",
+            image: roboticsImg
+        },
+        {
+            title: "Placement Readiness Program",
+            category: "Career",
+            duration: "6 Weeks",
+            description: "Expert-led mock interviews, resume reviews, aptitude coaching, and direct referrals to our 100+ hiring partner network.",
+            image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600"
+        },
+        {
+            title: "Graduate Engineering Training (GET)",
+            category: "Career",
+            duration: "2 Months",
+            description: "A bridge program for fresh engineering graduates. Gain domain-specific skills, real project experience, and professional mindset.",
+            image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600"
         }
-
     ];
 
     const launchData = [
@@ -261,6 +282,7 @@ const Home = () => {
                                 <div className="course-card" key={index}>
                                     <img src={course?.image} alt={course?.title} />
                                     <div className="course-content">
+                                        <span className="course-category">{course?.category}</span>
                                         <h4>{course?.title}</h4>
                                         <p>{course?.description}</p>
                                         <button>Learn More</button>

@@ -8,7 +8,7 @@ import {
     MailOutlined,
     EnvironmentOutlined
 } from "@ant-design/icons";
-
+import mapImage from "../assets/map image.webp";
 import { useNavigate } from "react-router-dom";
 
 const footerLinks = [
@@ -263,15 +263,25 @@ const Footer = () => {
                                 )}
                             </p>
                             {item?.type === "location" && (
+<div className="location-actions">
 
-                                <a
-                                    href={item.mapLink}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="direction-btn"
-                                >
-                                    <EnvironmentOutlined /> Get Direction
-                                </a>
+    <img
+        src={mapImage}
+        alt="Location Map"
+        className="footer-map-image"
+    />
+
+    <a
+        href={item.mapLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="direction-btn"
+    >
+        <EnvironmentOutlined />
+        Get Direction
+    </a>
+
+</div>
                             )}
                         </div>
                     ))}

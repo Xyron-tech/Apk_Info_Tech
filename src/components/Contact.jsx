@@ -124,10 +124,10 @@ export default function Contact() {
             <h3>Location</h3>
 
             <p>
-              No 65, 5th Street<br />
-              Ram Nagar<br />
+             No 65, 3rd floor, 5th street, <br />
+              Ram Nagar, <br />
               Mannivakkam<br />
-              Chennai - 600048
+              Chennai - 048
             </p>
 
           </div>

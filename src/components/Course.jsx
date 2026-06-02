@@ -1,12 +1,10 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import fullStackWebImg from '../assets/full stack web development .webp';
-import agenticAIImg from '../assets/Agentic AI with Gen AI.webp';
-import vlsiDesignImg from '../assets/VLSI Design.webp';
-import cyberSecurityImg from '../assets/Cyber Security.webp';
-import roboticsImg from '../assets/Robotics and PCB Design.webp';
-import placementImg from 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&auto=format&fit=crop&q=80';
-import getImg from 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&auto=format&fit=crop&q=80';
+import fullStackWebImg from '../assets/full-stack-web-development.webp';
+import agenticAIImg from '../assets/agentic-ai-gen-ai.webp';
+import vlsiDesignImg from '../assets/vlsi-design.webp';
+import cyberSecurityImg from '../assets/cyber-security.webp';
+import roboticsImg from '../assets/robotics-pcb-design.webp';
 
 const courses = [
   {
@@ -52,7 +50,7 @@ const courses = [
   {
     id: 6, title: 'Placement Readiness Program', category: 'Career',
     duration: '6 Weeks', mode: 'Online / Offline', level: 'All Levels',
-    img: placementImg,
+    img: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&auto=format&fit=crop&q=80',
     topics: ['Resume Building', 'Mock Interviews', 'Aptitude Training', 'Group Discussion', 'LinkedIn Optimization', 'HR Rounds', 'Soft Skills', 'Job Referrals'],
     desc: 'Expert-led mock interviews, resume reviews, aptitude coaching, and direct referrals to our 100+ hiring partner network.',
     badge: { label: 'Career', color: '#10b981', bg: '#ecfdf5' },
@@ -60,7 +58,7 @@ const courses = [
   {
     id: 7, title: 'Graduate Engineering Training (GET)', category: 'Career',
     duration: '2 Months', mode: 'Online / Offline', level: 'Fresh Graduates',
-    img: getImg,
+    img: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&auto=format&fit=crop&q=80',
     topics: ['Core Engineering', 'Industry Exposure', 'Project Work', 'Technical Communication', 'Problem Solving', 'Team Collaboration', 'Domain Specialization', 'Placement Support'],
     desc: 'A bridge program for fresh engineering graduates. Gain domain-specific skills, real project experience, and professional mindset.',
     badge: { label: 'Career', color: '#10b981', bg: '#ecfdf5' },

@@ -20,13 +20,13 @@ const Card = ({ image, name, designation, content }) => (
 
     <h3>{name}</h3>
 
+<span className="company-badge">
+      {designation}
+    </span>
+
     <div className="quote">
       {content}
     </div>
-
-    <span className="company-badge">
-      {designation}
-    </span>
 
   </div>
 );
@@ -77,8 +77,7 @@ export default function About() {
               image={ceo}
               name="DHAYANITHI ALAGESAN"
               designation="CEO"
-              content="Driving the company vision, culture, and long-term success through innovation and strategic decision making."
-            />
+              content='"Driving the company vision, culture, and long-term success through innovation and strategic decision making."'            />
 
           </div>
 
