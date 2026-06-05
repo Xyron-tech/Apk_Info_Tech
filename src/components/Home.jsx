@@ -1,5 +1,5 @@
 import "../style.css";
-
+import { useRef } from "react";
 import {
     MonitorOutlined,
     GlobalOutlined,
@@ -12,7 +12,7 @@ import {
     WhatsAppOutlined
 } from "@ant-design/icons";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow, Pagination, Navigation } from "swiper/modules";
+import { EffectCoverflow, Pagination, Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
@@ -27,9 +27,39 @@ import agenticAIImg from '../assets/agentic-ai-gen-ai.webp';
 import vlsiDesignImg from '../assets/vlsi-design.webp';
 import cyberSecurityImg from '../assets/cyber-security.webp';
 import roboticsImg from '../assets/robotics-pcb-design.webp';
-
+import {
+    LeftOutlined,
+    RightOutlined,
+} from "@ant-design/icons";
+import courseImage from '../assets/course.png'
 
 const Home = () => {
+
+    const swiperRef = useRef(null);
+    const heroSlides = [
+        {
+            title: "Build Your Career With",
+            highlight: "APK INFOTECH",
+            description:
+                "Empowering students and businesses through innovative placement solutions, internships, live projects, and industry-ready IT courses.",
+            image:
+                "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1000",
+        },
+        {
+            title: "Courses & Placement Training",
+            description:
+                "Master in-demand skills with our industry-aligned courses. From Full Stack to AI, VLSI & Cyber Security.",
+            image:
+                "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1000",
+        },
+                {
+            title: "Client Services That Deliver",
+            description:
+                "Connecting top talent with industry-leading companies. Comprehensive staffing solutions tailored to your business needs.",
+            image:
+                "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1000",
+        },
+    ];
 
     const servicesData = [
 
@@ -162,42 +192,89 @@ const Home = () => {
     return (
 
         <section className="home">
-            <div className="hero-section">
-                <div className="hero-left">
-                    <span className="hero-tag">
-                        Welcome To APK INFOTECH
-                    </span>
-                    <h1>
-                        Build Your Career With
-                        <span> APK INFOTECH</span>
-                    </h1>
-                    <p>
-                        Empowering students and businesses through
-                        innovative placement solutions, internships,
-                        live projects, and industry-ready IT courses.
-                    </p>
-                    <div className="hero-buttons">
+            <section className="hero-slider-section">
+                <Swiper
+                    modules={[Pagination, Navigation,Autoplay]}
+                    navigation={{
+                        prevEl: ".hero-prev",
+                        nextEl: ".hero-next",
+                    }}
+                    pagination={{
+                        clickable: true,
+                    }}
+                    autoplay={{
+                        delay: 4000,
+                        disableOnInteraction: false,
+                    }}
+                    loop={true}
+                    className="hero-swiper"
+                >
 
-                        <Link to="/courses">
-                            <button className="primary-btn">
-                                Explore Courses
-                            </button>
-                        </Link>
+                    {heroSlides?.map((slide, index) => (
+                        <SwiperSlide key={index}>
+                            <div className="hero-slide-container">
 
-                        <Link to="/contact">
-                            <button className="secondary-btn">
-                                Contact Us
-                            </button>
-                        </Link>
-                    </div>
+                                <div className="hero-slide-left">
+
+                                    <span className="hero-tag">
+                                        Welcome To APK INFOTECH
+                                    </span>
+
+                                    <h1>
+                                        {slide.title}
+                                    </h1>
+
+                                     <h2 style={{color:"#facc15"}}>
+                                        {slide.highlight}
+                                    </h2>
+
+                                    <p>
+                                        {slide.description}
+                                    </p>
+
+                                    <div className="hero-buttons">
+
+                                        <Link to="/courses">
+                                            <button className="primary-btn">
+                                                Explore Courses
+                                            </button>
+                                        </Link>
+
+                                        <Link to="/contact">
+                                            <button className="secondary-btn">
+                                                Contact Us
+                                            </button>
+                                        </Link>
+
+                                    </div>
+
+                                </div>
+
+                                <div className="hero-slide-right">
+                                    <img src={slide.image} alt={slide.title} />
+                                </div>
+
+                            </div>
+                        </SwiperSlide>
+                    ))}
+
+                </Swiper>
+                <div className="hero-navigation">
+                    <button
+                        className="hero-prev"
+                        onClick={() => swiperRef.current?.slidePrev()}
+                    >
+                        <LeftOutlined />
+                    </button>
+
+                    <button
+                        className="hero-next"
+                        onClick={() => swiperRef.current?.slideNext()}
+                    >
+                        <RightOutlined />
+                    </button>
                 </div>
-                <div className="hero-right">
-                    <img
-                        src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3"
-                        alt="Hero"
-                    />
-                </div>
-            </div>
+            </section>
             <div className="stats-section">
                 <div className="stat-card">
                     <h2>1000+</h2>
@@ -259,7 +336,7 @@ const Home = () => {
                 <div className="courses-layout">
                     <div className="courses-fixed-card">
                         <img
-                            src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&auto=format&fit=crop&q=80"
+                            src={courseImage}
                             alt="Courses"
                         />
                         <span className="course-badge">

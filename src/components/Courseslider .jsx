@@ -44,9 +44,9 @@ const launchData = [
 ];
 
 const tagColors = {
-  'Full Stack':       { bg: '#EEEDFE', color: '#3C3489' },
-  'Agentical AI':    { bg: '#FAEEDA', color: '#633806' },
-  'Cyber Security':  { bg: '#E1F5EE', color: '#085041' },
+  'Full Stack': { bg: '#EEEDFE', color: '#3C3489' },
+  'Agentical AI': { bg: '#FAEEDA', color: '#633806' },
+  'Cyber Security': { bg: '#E1F5EE', color: '#085041' },
   'Client Services': { bg: '#FAECE7', color: '#712B13' },
 };
 
@@ -55,9 +55,9 @@ function getTagStyle(tag) {
 }
 
 function getOffset(idx, current, total) {
-  const raw  = idx - current;
+  const raw = idx - current;
   const half = Math.floor(total / 2);
-  if (raw >  half) return raw - total;
+  if (raw > half) return raw - total;
   if (raw < -half) return raw + total;
   return raw;
 }
@@ -66,13 +66,13 @@ const STEP = 420;
 
 /* ── PosterCard ── */
 function PosterCard({ item, offset, onClick }) {
-  const abs   = Math.abs(offset);
+  const abs = Math.abs(offset);
   const scale = abs === 0 ? 1 : abs === 1 ? 0.78 : 0.62;
-  const tx    = offset * STEP;
-  const tz    = abs === 0 ? 0 : abs === 1 ? -100 : -200;
-  const ry    = offset === 0 ? 0 : offset > 0 ? -30 * Math.min(abs, 1.5) : 30 * Math.min(abs, 1.5);
-  const op    = abs === 0 ? 1 : abs === 1 ? 0.72 : 0.4;
-  const zi    = 10 - abs;
+  const tx = offset * STEP;
+  const tz = abs === 0 ? 0 : abs === 1 ? -100 : -200;
+  const ry = offset === 0 ? 0 : offset > 0 ? -30 * Math.min(abs, 1.5) : 30 * Math.min(abs, 1.5);
+  const op = abs === 0 ? 1 : abs === 1 ? 0.72 : 0.4;
+  const zi = 10 - abs;
   if (abs > 2) return null;
 
   return (
@@ -101,13 +101,13 @@ function PosterCard({ item, offset, onClick }) {
 
 /* ── CourseCard ── */
 function CourseCard({ item, offset, onClick }) {
-  const abs   = Math.abs(offset);
+  const abs = Math.abs(offset);
   const scale = abs === 0 ? 1 : abs === 1 ? 0.78 : 0.62;
-  const tx    = offset * STEP;
-  const tz    = abs === 0 ? 0 : abs === 1 ? -100 : -200;
-  const ry    = offset === 0 ? 0 : offset > 0 ? -30 * Math.min(abs, 1.5) : 30 * Math.min(abs, 1.5);
-  const op    = abs === 0 ? 1 : abs === 1 ? 0.72 : 0.4;
-  const zi    = 10 - abs;
+  const tx = offset * STEP;
+  const tz = abs === 0 ? 0 : abs === 1 ? -100 : -200;
+  const ry = offset === 0 ? 0 : offset > 0 ? -30 * Math.min(abs, 1.5) : 30 * Math.min(abs, 1.5);
+  const op = abs === 0 ? 1 : abs === 1 ? 0.72 : 0.4;
+  const zi = 10 - abs;
   if (abs > 2) return null;
 
   const tagStyle = getTagStyle(item.tag);
@@ -145,7 +145,7 @@ function CourseCard({ item, offset, onClick }) {
             {item?.duration && (
               <span className="cs-meta-item cs-meta-duration">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                  <circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" />
                 </svg>
                 {item?.duration}
               </span>
@@ -153,7 +153,7 @@ function CourseCard({ item, offset, onClick }) {
             {item?.mode && (
               <span className="cs-meta-item cs-meta-mode">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" />
                 </svg>
                 {item?.mode}
               </span>
@@ -168,7 +168,7 @@ function CourseCard({ item, offset, onClick }) {
 /* ── Main Slider ── */
 export default function CourseSlider() {
   const [current, setCurrent] = useState(0);
-  const [paused, setPaused]   = useState(false);
+  const [paused, setPaused] = useState(false);
   const touchStartX = useRef(null);
   const total = launchData.length;
 
@@ -179,7 +179,7 @@ export default function CourseSlider() {
   /* keyboard navigation */
   useEffect(() => {
     const onKey = (e) => {
-      if (e.key === 'ArrowLeft')  prev();
+      if (e.key === 'ArrowLeft') prev();
       if (e.key === 'ArrowRight') next();
     };
     window.addEventListener('keydown', onKey);
@@ -197,7 +197,7 @@ export default function CourseSlider() {
 
   /* touch swipe */
   const onTouchStart = (e) => { touchStartX.current = e.touches[0].clientX; };
-  const onTouchEnd   = (e) => {
+  const onTouchEnd = (e) => {
     if (touchStartX.current === null) return;
     const diff = touchStartX.current - e.changedTouches[0].clientX;
     if (Math.abs(diff) > 40) diff > 0 ? next() : prev();
@@ -206,7 +206,7 @@ export default function CourseSlider() {
 
   return (
     <section className="cs-root">
-         <h2 className="cs-heading">Featured Programs</h2>
+      <h2 className="cs-heading">Featured Programs</h2>
       <p className="cs-subtitle">Explore our latest programs and initiatives</p>
       <div className="cs-divider" />
 
@@ -218,7 +218,7 @@ export default function CourseSlider() {
         onMouseLeave={() => setPaused(false)}
       >
         {launchData?.map((item, i) => {
-          const offset   = getOffset(i, current, total);
+          const offset = getOffset(i, current, total);
           const isPoster = !!item.link;
           return isPoster
             ? <PosterCard key={i} item={item} offset={offset} onClick={() => goTo(i)} />
@@ -226,27 +226,29 @@ export default function CourseSlider() {
         })}
       </div>
 
-      <div className="cs-nav-btns">
-        <button className="cs-nav-btn" onClick={prev} aria-label="Previous">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-        </button>
-        <button className="cs-nav-btn" onClick={next} aria-label="Next">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-        </button>
+      <div className='cs-bottom'>
+        <div className="cs-nav-btns">
+          <button className="cs-nav-btn" onClick={prev} aria-label="Previous">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6" /></svg>
+          </button>
+          <button className="cs-nav-btn" onClick={next} aria-label="Next">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6" /></svg>
+          </button>
+        </div>
+        <div className="cs-dots" role="tablist">
+          {launchData?.map((_, i) => (
+            <button
+              key={i}
+              role="tab"
+              aria-selected={i === current}
+              aria-label={`Slide ${i + 1}`}
+              className={`cs-dot ${i === current ? 'cs-dot-active' : ''}`}
+              onClick={() => goTo(i)}
+            />
+          ))}
+        </div>
       </div>
 
-      <div className="cs-dots" role="tablist">
-        {launchData?.map((_, i) => (
-          <button
-            key={i}
-            role="tab"
-            aria-selected={i === current}
-            aria-label={`Slide ${i + 1}`}
-            className={`cs-dot ${i === current ? 'cs-dot-active' : ''}`}
-            onClick={() => goTo(i)}
-          />
-        ))}
-      </div>
     </section>
   );
 }

@@ -10,6 +10,8 @@ import {
 } from "@ant-design/icons";
 import mapImage from "../assets/map image.webp";
 import { useNavigate } from "react-router-dom";
+import logo from "../assets/logo.png";
+
 
 const footerLinks = [
 
@@ -106,9 +108,8 @@ const contactInfo = [
         value:
             "No 65, 3rd floor, 5th street, Ram Nagar, Mannivakkam, Chennai - 048",
 
-        mapLink:
-            "https://www.google.com/maps/search/?api=1&query=No+65+3rd+floor+5th+Street+Ram+Nagar+Mannivakkam+Chennai+048"
-    }
+        mapLink:"https://www.google.com/maps/place/65,+Ram+Nagar+5th+St,+Murugu+Nagar,+Ram+Nagar,+Velachery,+Chennai,+Tamil+Nadu+600042/@12.9718082,80.2128942,16.34z/data=!4m13!1m7!3m6!1s0x3a525d914a94c6f5:0x17f5a4aa07e6159e!2s65,+Ram+Nagar+5th+St,+Murugu+Nagar,+Ram+Nagar,+Velachery,+Chennai,+Tamil+Nadu+600042!3b1!8m2!3d12.9720116!4d80.2169151!3m4!1s0x3a525d914a94c6f5:0x17f5a4aa07e6159e!8m2!3d12.9720116!4d80.2169151?entry=ttu&g_ep=EgoyMDI2MDYwMS4wIKXMDSoASAFQAw%3D%3D"
+            }
 
 ];
 
@@ -127,8 +128,13 @@ const Footer = () => {
                     <div
                         className="footer-logo"
                         onClick={() => navigate("/")}
-                        style={{ cursor: "pointer" }}
+                        style={{ cursor: "pointer", gap: "10px" }}
                     >
+
+
+                        <div className="navbar-logo">
+                            <img src={logo} alt="APK Info Tech" />
+                        </div>
 
                         <div className="footer-logo-text">
 
@@ -146,7 +152,7 @@ const Footer = () => {
 
                         Empowering careers and businesses through innovative
                         placement solutions, cutting-edge courses, and
-                        professional services since 2020.
+                        professional services since 2026.
 
                     </p>
 
@@ -154,7 +160,7 @@ const Footer = () => {
 
                         <a href="#" className="social-link">
 
-                            <InstagramOutlined  />
+                            <InstagramOutlined />
 
                         </a>
 
@@ -182,7 +188,7 @@ const Footer = () => {
                 <div className="footer-column">
 
                     <h3>Services</h3>
-
+                    <div className="acc-divider-footer" />
                     <ul>
 
                         {servicesLinks?.map((service, index) => (
@@ -207,6 +213,7 @@ const Footer = () => {
                 <div className="footer-column">
 
                     <h3>Quick Links</h3>
+                    <div className="acc-divider-footer " />
 
                     <ul>
 
@@ -231,6 +238,7 @@ const Footer = () => {
                 <div className="footer-column footer-contact">
 
                     <h3>Contact Info</h3>
+                    <div className="acc-divider-footer " />
 
                     {contactInfo?.map((item, index) => (
 
@@ -263,25 +271,31 @@ const Footer = () => {
                                 )}
                             </p>
                             {item?.type === "location" && (
-<div className="location-actions">
+                                <div className="location-actions">
 
-    <img
-        src={mapImage}
-        alt="Location Map"
-        className="footer-map-image"
-    />
+                                    <a
+                                        href={item.mapLink}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <img
+                                            src={mapImage}
+                                            alt="Location Map"
+                                            className="footer-map-image"
+                                        />
+                                    </a>
 
-    <a
-        href={item.mapLink}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="direction-btn"
-    >
-        <EnvironmentOutlined />
-        Get Direction
-    </a>
+                                    <a
+                                        href={item.mapLink}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="direction-btn"
+                                    >
+                                        <EnvironmentOutlined />
+                                        Get Direction
+                                    </a>
 
-</div>
+                                </div>
                             )}
                         </div>
                     ))}

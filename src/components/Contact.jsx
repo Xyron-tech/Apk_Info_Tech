@@ -1,8 +1,9 @@
 
 import {
-    PhoneOutlined,
-    MailOutlined,
-    EnvironmentOutlined
+  PhoneOutlined,
+  MailOutlined,
+  EnvironmentOutlined,
+  SendOutlined
 } from "@ant-design/icons";
 
 export default function Contact() {
@@ -36,8 +37,6 @@ export default function Contact() {
         {/* FORM */}
 
         <div className="contact-card">
-
-          <h2>Send Message</h2>
 
           <form onSubmit={handleSubmit}>
 
@@ -76,8 +75,9 @@ export default function Contact() {
               required
             ></textarea>
 
-            <button type="submit">
-              Send Message
+            <button type="submit" className="send-btn">
+              <SendOutlined style={{ transform: "rotate(312deg)" }} />
+              <span>Send Message</span>
             </button>
 
           </form>
@@ -124,7 +124,7 @@ export default function Contact() {
             <h3>Location</h3>
 
             <p>
-             No 65, 3rd floor, 5th street, <br />
+              No 65, 3rd floor, 5th street, <br />
               Ram Nagar, <br />
               Mannivakkam<br />
               Chennai - 048
