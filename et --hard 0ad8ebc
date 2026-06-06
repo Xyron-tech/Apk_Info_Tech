@@ -1,0 +1,10 @@
+[33mcc0c6d6[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m my changes
+[33m0ad8ebc[m new changes commit
+[33mc7693cc[m new changes
+[33md6f2a57[m feat: add course images and CIN to navbar
+[33m0c55835[m fix: update location address and map link in Footer component for accuracy
+[33m23e91eb[m fix: update service options in Contact component for clarity and relevance
+[33m123f7c2[m fix: update Accreditation component layout and footer year, adjust CSS for featured wrap
+[33m09bc5a1[m fix: update overlay-section styles for improved visibility and layout
+[33m1a18c30[m fix: update overlay-section styles for improved layout and visibility
+[33mbf24436[m fix: enforce display and visibility properties with !important for consistent rendering
