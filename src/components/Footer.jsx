@@ -158,7 +158,7 @@ const Footer = () => {
 
                     <div className="footer-socials">
 
-                        <a href="#" className="social-link">
+                        <a href="https://www.instagram.com/apk_infotech?igsh=d2s5enZyYmE4aW1m" className="social-link">
 
                             <InstagramOutlined />
 

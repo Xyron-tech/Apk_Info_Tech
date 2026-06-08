@@ -1,0 +1,595 @@
+/* ═══════════════════════════════════════════════════════
+   Achievement.css  —  Sticky Overlay Scroll
+   Navy + Gold  |  Syne + DM Sans
+   ═══════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap');
+
+/* ── TOKENS ───────────────────────────────────────────── */
+:root {
+  --navy:          #0B0C2A;
+  --navy-mid:      #1F2270;        /* same as navbar */
+  --navy-dark:     #1a1c5c;
+  --gold:          #FFB800;
+  --gold-light:    #FFD250;
+  --bg-1:          #F0F2FF;
+  --bg-2:          #e8eaff;
+  --bg-3:          #dde0ff;
+  --text-muted:    #6B6CA0;
+  --border:        rgba(11,12,42,0.09);
+  --card-shadow:   0 4px 24px rgba(11,12,42,0.08);
+  --card-hover-sh: 0 16px 48px rgba(11,12,42,0.17);
+  --grad-gold:     linear-gradient(135deg, #FFB800 0%, #FFE066 50%, #FFB800 100%);
+  --grad-gold2:    linear-gradient(135deg, #E6A000 0%, #FFD250 100%);
+  --nav-bg:        linear-gradient(135deg, #1F2270 0%, #2a2c4a 100%);  /* matches navbar */
+}
+
+/* ── PAGE SHELL ───────────────────────────────────────── */
+.achievement-page {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg-1);
+  color: var(--navy);
+  /* NO overflow:hidden — sticky requires window scroll */
+}
+
+/* ── SCROLL WRAPPER ───────────────────────────────────── */
+.ach-scroll-wrapper {
+  position: relative;
+  /* NO overflow:hidden */
+}
+
+/* ═══════════════════════════════════════════════════════
+   DESKTOP / TABLET SECTIONS
+   ═══════════════════════════════════════════════════════ */
+
+.ach-section {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ── S1 — Hero: light periwinkle (matches screenshot) ─── */
+.ach-s1 {
+  z-index: 10;
+  background: #F0F2FF;
+}
+
+.ach-hero-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.8rem;
+  text-align: center;
+  padding: 0 1.5rem;
+  width: 100%;
+  max-width: 700px;
+}
+
+.ach-hero-text {
+  animation: fadeUp 0.7s ease both;
+}
+
+.ach-hero-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 40px;
+  font-weight: 800;
+  color: var(--navy);        /* dark on light bg */
+  line-height: 1.15;
+  margin: 0;
+}
+
+.ach-hero-title span {
+  background: var(--grad-gold);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.ach-hero-sub {
+  color: var(--text-muted);  /* muted dark on light bg */
+  font-size: 1rem;
+  margin-top: 0.4rem;
+}
+
+.ach-hero-img-wrap {
+  width: min(90vw, 560px);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  border: 2px solid rgba(255,184,0,0.3);
+  animation: fadeUp 0.7s 0.15s ease both;
+}
+
+.ach-hero-img-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  max-height: 52vh;
+  object-position: center;
+}
+
+/* ── S2 / S3 — Overlay sheets ────────────────────────── */
+.ach-s2 {
+  z-index: 20;
+  background: var(--bg-2);
+  border-radius: 28px 28px 0 0;
+  box-shadow:
+    0 -20px 60px rgba(0,0,0,0.25),
+    0 -4px  20px rgba(0,0,0,0.15);
+}
+
+.ach-s3 {
+  z-index: 30;
+  background: var(--bg-3);
+  border-radius: 28px 28px 0 0;
+  box-shadow:
+    0 -20px 60px rgba(0,0,0,0.25),
+    0 -4px  20px rgba(0,0,0,0.15);
+}
+
+/* Gold top bar */
+.ach-s2::before,
+.ach-s3::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    transparent, var(--gold), var(--gold-light), var(--gold), transparent
+  );
+  border-radius: 28px 28px 0 0;
+  z-index: 1;
+}
+
+/* ── SECTION INNER ────────────────────────────────────── */
+.ach-section-inner {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* push header up, cards fill remaining space */
+  justify-content: flex-start;
+  gap: 1rem;
+  /* start from very top of the section */
+  padding-top: 1.8rem;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/* ── SECTION HEADER — tight to top ───────────────────── */
+.ach-section-header {
+  text-align: center;
+  flex-shrink: 0;
+  /* Sits at top — no big margin above */
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.ach-section-header h2 {
+  font-family: 'Syne', sans-serif;
+  font-size:30px;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0 0 0.3rem;
+  line-height: 1.2;
+}
+
+.ach-section-header h2 span {
+  background: var(--grad-gold2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.ach-section-desc {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  margin-top: 0.35rem;
+}
+
+/* ── UNDERLINE (proper centered underline) ───────────── */
+.ach-divider {
+  width: 56px;
+  height: 4px;
+  background: var(--grad-gold);
+  border-radius: 2px;
+  margin: 0.5rem 0 0;
+}
+
+.ach-divider-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Section header underline — always centered */
+.ach-header-underline {
+  width: 56px;
+  height: 4px;
+  background: var(--grad-gold);
+  border-radius: 2px;
+  margin: 0.4rem auto 0;
+}
+
+/* ═══════════════════════════════════════════════════════
+   GRID + CARDS
+   Reference HTML: 4-col grid, image height fixed per bp
+   ═══════════════════════════════════════════════════════ */
+
+.ach-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  width: 100%;
+  flex: 1;            /* fills remaining height in section */
+  align-content: start;
+}
+
+.ach-card {
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border);
+  transition:
+    transform 0.35s cubic-bezier(0.4,0,0.2,1),
+    box-shadow 0.35s;
+  position: relative;
+}
+
+.ach-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--grad-gold2);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s;
+  z-index: 1;
+}
+
+.ach-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--card-hover-sh);
+}
+
+.ach-card:hover::before {
+  transform: scaleX(1);
+}
+
+.ach-card-img-wrap {
+  width: 100%;
+  overflow: hidden;
+  background: linear-gradient(135deg, #e8eaff 0%, #d0d4ff 100%);
+  /* height set per breakpoint below */
+}
+
+.ach-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.ach-card:hover .ach-card-img {
+  transform: scale(1.05);
+}
+
+.ach-card-body {
+  padding: 1rem;
+  text-align: center;
+}
+
+.ach-card-body h4 {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0;
+}
+
+.ach-card-text {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin: 0.25rem 0 0.45rem;
+  line-height: 1.5;
+}
+
+.ach-badge {
+  display: inline-block;
+  background: var(--grad-gold2);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  font-family: 'Syne', sans-serif;
+  padding: 0.2rem 0.75rem;
+  border-radius: 20px;
+  letter-spacing: 0.04em;
+}
+
+/* ═══════════════════════════════════════════════════════
+   BREAKPOINT: TABLET  769–1024px
+   Same sticky overlay · 2-col grid · tighter image height
+   ═══════════════════════════════════════════════════════ */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .ach-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    max-width: 780px;
+  }
+
+  .ach-card-img-wrap {
+    height: 175px;
+  }
+
+  .ach-section-inner {
+    padding-top: 1.5rem;
+    gap: 0.85rem;
+  }
+
+  .ach-hero-img-wrap img {
+    max-height: 38vh;
+  }
+
+}
+
+/* ═══════════════════════════════════════════════════════
+   BREAKPOINT: STANDARD DESKTOP  1025–1440px
+   4-col grid · image 200px (matches HTML reference)
+   ═══════════════════════════════════════════════════════ */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .ach-card-img-wrap {
+    height: 200px;          /* matches .ach-card-img-wrap in HTML ref */
+  }
+
+  .ach-grid {
+    gap: 1.5rem;            /* matches HTML ref */
+  }
+
+  .ach-section-inner {
+    max-width: 1200px;      /* matches HTML ref */
+    padding-top: 2rem;
+    gap: 1.2rem;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════
+   BREAKPOINT: LARGE DESKTOP  1441px+
+   ═══════════════════════════════════════════════════════ */
+@media (min-width: 1441px) {
+  .ach-card-img-wrap {
+    height: 240px;
+  }
+
+  .ach-grid {
+    gap: 1.8rem;
+  }
+
+  .ach-section-inner {
+    max-width: 1350px;
+    padding-top: 2.2rem;
+  }
+
+  .ach-hero-img-wrap img {
+    max-height: 58vh;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════
+   MOBILE  ≤768px  — Card-over-card sticky stack
+   ═══════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+
+  /* Wrapper: relative only, NO overflow:hidden */
+  .ach-mobile-wrapper {
+    position: relative;
+  }
+
+  /* ── Hero ─────────────────────────────────────────── */
+  .ach-mob-hero {
+    background: #F0F2FF;       /* same as S1 desktop */
+    width: 100%;
+    padding: 40px 1rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    min-height: 100dvh;
+    box-sizing: border-box;
+  }
+
+  .ach-mob-hero-text {
+    text-align: center;
+    color: var(--navy);
+    width: 100%;
+  }
+
+  .ach-mob-hero-text h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.9rem;
+    font-weight: 800;
+    color: var(--navy);        /* dark on light bg */
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  .ach-mob-hero-text h1 span {
+    background: var(--grad-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .ach-mob-hero-text p {
+    color: var(--text-muted);  /* dark muted on light bg */
+    font-size: 0.85rem;
+    margin-top: 0.4rem;
+    text-align: center;
+  }
+
+  .ach-mob-divider {
+    width: 48px;
+    height: 3px;
+    background: var(--grad-gold);
+    border-radius: 2px;
+    margin: 0.5rem auto 0; /* auto left/right = center */
+    display: block;
+  }
+
+  .ach-mob-hero-img {
+    width: calc(100% - 2rem); /* full width minus page padding */
+    max-width: 420px;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 16px 48px rgba(0,0,0,0.35);
+    border: 2px solid rgba(255,184,0,0.3);
+  }
+
+  .ach-mob-hero-img img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* ── Section label ─────────────────────────────────── */
+  .ach-mob-label {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1.6rem 1rem 1.2rem;
+    /* CENTER everything */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* ← this centers underline + text */
+    border-radius: 22px 22px 0 0;
+    box-shadow:
+      0 -16px 48px rgba(0,0,0,0.2),
+      0 -3px  12px rgba(0,0,0,0.1);
+    position: relative;
+  }
+
+  /* Gold top bar */
+  .ach-mob-label::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(
+      90deg,
+      transparent, var(--gold), var(--gold-light), var(--gold), transparent
+    );
+    border-radius: 22px 22px 0 0;
+  }
+
+  .ach-mob-label-s2 { background: var(--bg-2); }
+  .ach-mob-label-s3 { background: var(--bg-3); }
+
+  .ach-mob-label h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin: 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  .ach-mob-label h2 span {
+    background: var(--grad-gold2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Underline under section name — centered */
+  .ach-mob-label .ach-header-underline {
+    width: 48px;
+    height: 3px;
+    background: var(--grad-gold);
+    border-radius: 2px;
+    margin: 0.45rem auto 0; /* auto = centered */
+    display: block;
+    flex-shrink: 0;
+  }
+
+  /* Description text under underline — centered */
+  .ach-mob-label p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 0.5rem;
+    text-align: center;
+    width: 100%;
+    padding: 0 0.5rem;
+    box-sizing: border-box;
+  }
+
+  /* ── Card wrapper ──────────────────────────────────── */
+  /* Full viewport width, section bg, zero gap between cards */
+  .ach-mob-card-wrap {
+    width: 100%;
+    box-sizing: border-box;
+    /* padding gives breathing room inside the bg color */
+    padding: 0.75rem 1rem 0;
+    margin: 0;
+  }
+
+  /* Last card in each section: extra bottom padding */
+  .ach-mob-card-wrap:last-of-type {
+    padding-bottom: 0.75rem;
+  }
+
+  .ach-mob-bg-s2 { background: var(--bg-2); }
+  .ach-mob-bg-s3 { background: var(--bg-3); }
+
+  /* Card itself — full width of wrapper */
+  .ach-mob-card-item {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    display: block;
+    border-radius: 14px;
+  }
+
+  /* Mobile card image */
+  .ach-mob-card-item .ach-card-img-wrap {
+    height: 440px;
+  }
+
+  .ach-mob-card-item .ach-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  /* Card body center align */
+  .ach-mob-card-item .ach-card-body {
+    text-align: center;
+    padding: 0.9rem 1rem;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════
+   ANIMATIONS
+   ═══════════════════════════════════════════════════════ */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
