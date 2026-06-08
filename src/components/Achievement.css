@@ -8,7 +8,7 @@
 /* ── TOKENS ───────────────────────────────────────────── */
 :root {
   --navy:          #0B0C2A;
-  --navy-mid:      #1F2270;        /* same as navbar */
+  --navy-mid:      #1F2270;
   --navy-dark:     #1a1c5c;
   --gold:          #FFB800;
   --gold-light:    #FFD250;
@@ -21,7 +21,7 @@
   --card-hover-sh: 0 16px 48px rgba(11,12,42,0.17);
   --grad-gold:     linear-gradient(135deg, #FFB800 0%, #FFE066 50%, #FFB800 100%);
   --grad-gold2:    linear-gradient(135deg, #E6A000 0%, #FFD250 100%);
-  --nav-bg:        linear-gradient(135deg, #1F2270 0%, #2a2c4a 100%);  /* matches navbar */
+  --nav-bg:        linear-gradient(135deg, #1F2270 0%, #2a2c4a 100%);
 }
 
 /* ── PAGE SHELL ───────────────────────────────────────── */
@@ -29,13 +29,11 @@
   font-family: 'DM Sans', sans-serif;
   background: var(--bg-1);
   color: var(--navy);
-  /* NO overflow:hidden — sticky requires window scroll */
 }
 
 /* ── SCROLL WRAPPER ───────────────────────────────────── */
 .ach-scroll-wrapper {
   position: relative;
-  /* NO overflow:hidden */
 }
 
 /* ═══════════════════════════════════════════════════════
@@ -52,7 +50,7 @@
   overflow: hidden;
 }
 
-/* ── S1 — Hero: light periwinkle (matches screenshot) ─── */
+/* ── S1 — Hero ─── */
 .ach-s1 {
   z-index: 10;
   background: #F0F2FF;
@@ -77,7 +75,7 @@
   font-family: 'Syne', sans-serif;
   font-size: 40px;
   font-weight: 800;
-  color: var(--navy);        /* dark on light bg */
+  color: var(--navy);
   line-height: 1.15;
   margin: 0;
 }
@@ -90,7 +88,7 @@
 }
 
 .ach-hero-sub {
-  color: var(--text-muted);  /* muted dark on light bg */
+  color: var(--text-muted);
   font-size: 1rem;
   margin-top: 0.4rem;
 }
@@ -132,7 +130,6 @@
     0 -4px  20px rgba(0,0,0,0.15);
 }
 
-/* Gold top bar */
 .ach-s2::before,
 .ach-s3::before {
   content: '';
@@ -155,27 +152,24 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* push header up, cards fill remaining space */
   justify-content: flex-start;
   gap: 1rem;
-  /* start from very top of the section */
   padding-top: 1.8rem;
   height: 100%;
   box-sizing: border-box;
 }
 
-/* ── SECTION HEADER — tight to top ───────────────────── */
+/* ── SECTION HEADER ───────────────────────────────────── */
 .ach-section-header {
   text-align: center;
   flex-shrink: 0;
-  /* Sits at top — no big margin above */
   margin-top: 0;
   padding-top: 0;
 }
 
 .ach-section-header h2 {
   font-family: 'Syne', sans-serif;
-  font-size:30px;
+  font-size: 30px;
   font-weight: 700;
   color: var(--navy);
   margin: 0 0 0.3rem;
@@ -195,7 +189,6 @@
   margin-top: 0.35rem;
 }
 
-/* ── UNDERLINE (proper centered underline) ───────────── */
 .ach-divider {
   width: 56px;
   height: 4px;
@@ -209,7 +202,6 @@
   margin-right: auto;
 }
 
-/* Section header underline — always centered */
 .ach-header-underline {
   width: 56px;
   height: 4px;
@@ -220,7 +212,6 @@
 
 /* ═══════════════════════════════════════════════════════
    GRID + CARDS
-   Reference HTML: 4-col grid, image height fixed per bp
    ═══════════════════════════════════════════════════════ */
 
 .ach-grid {
@@ -228,7 +219,7 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 1.25rem;
   width: 100%;
-  flex: 1;            /* fills remaining height in section */
+  flex: 1;
   align-content: start;
 }
 
@@ -270,7 +261,6 @@
   width: 100%;
   overflow: hidden;
   background: linear-gradient(135deg, #e8eaff 0%, #d0d4ff 100%);
-  /* height set per breakpoint below */
 }
 
 .ach-card-img {
@@ -318,8 +308,7 @@
 }
 
 /* ═══════════════════════════════════════════════════════
-   BREAKPOINT: TABLET  769–1024px
-   Same sticky overlay · 2-col grid · tighter image height
+   TABLET  769–1024px
    ═══════════════════════════════════════════════════════ */
 @media (min-width: 769px) and (max-width: 1024px) {
   .ach-grid {
@@ -340,31 +329,29 @@
   .ach-hero-img-wrap img {
     max-height: 38vh;
   }
-
 }
 
 /* ═══════════════════════════════════════════════════════
-   BREAKPOINT: STANDARD DESKTOP  1025–1440px
-   4-col grid · image 200px (matches HTML reference)
+   DESKTOP  1025–1440px
    ═══════════════════════════════════════════════════════ */
 @media (min-width: 1025px) and (max-width: 1440px) {
   .ach-card-img-wrap {
-    height: 200px;          /* matches .ach-card-img-wrap in HTML ref */
+    height: 200px;
   }
 
   .ach-grid {
-    gap: 1.5rem;            /* matches HTML ref */
+    gap: 1.5rem;
   }
 
   .ach-section-inner {
-    max-width: 1200px;      /* matches HTML ref */
+    max-width: 1200px;
     padding-top: 2rem;
     gap: 1.2rem;
   }
 }
 
 /* ═══════════════════════════════════════════════════════
-   BREAKPOINT: LARGE DESKTOP  1441px+
+   LARGE DESKTOP  1441px+
    ═══════════════════════════════════════════════════════ */
 @media (min-width: 1441px) {
   .ach-card-img-wrap {
@@ -387,17 +374,17 @@
 
 /* ═══════════════════════════════════════════════════════
    MOBILE  ≤768px  — Card-over-card sticky stack
+   BASE MOBILE STYLES (applies to all mobile sizes)
    ═══════════════════════════════════════════════════════ */
 @media (max-width: 768px) {
 
-  /* Wrapper: relative only, NO overflow:hidden */
   .ach-mobile-wrapper {
     position: relative;
   }
 
   /* ── Hero ─────────────────────────────────────────── */
   .ach-mob-hero {
-    background: #F0F2FF;       /* same as S1 desktop */
+    background: #F0F2FF;
     width: 100%;
     padding: 40px 1rem 2.5rem;
     display: flex;
@@ -418,7 +405,7 @@
     font-family: 'Syne', sans-serif;
     font-size: 1.9rem;
     font-weight: 800;
-    color: var(--navy);        /* dark on light bg */
+    color: var(--navy);
     margin: 0;
     line-height: 1.2;
   }
@@ -431,7 +418,7 @@
   }
 
   .ach-mob-hero-text p {
-    color: var(--text-muted);  /* dark muted on light bg */
+    color: var(--text-muted);
     font-size: 0.85rem;
     margin-top: 0.4rem;
     text-align: center;
@@ -442,12 +429,12 @@
     height: 3px;
     background: var(--grad-gold);
     border-radius: 2px;
-    margin: 0.5rem auto 0; /* auto left/right = center */
+    margin: 0.5rem auto 0;
     display: block;
   }
 
   .ach-mob-hero-img {
-    width: calc(100% - 2rem); /* full width minus page padding */
+    width: calc(100% - 2rem);
     max-width: 420px;
     border-radius: 14px;
     overflow: hidden;
@@ -467,11 +454,10 @@
     width: 100%;
     box-sizing: border-box;
     padding: 1.6rem 1rem 1.2rem;
-    /* CENTER everything */
     text-align: center;
     display: flex;
     flex-direction: column;
-    align-items: center;   /* ← this centers underline + text */
+    align-items: center;
     border-radius: 22px 22px 0 0;
     box-shadow:
       0 -16px 48px rgba(0,0,0,0.2),
@@ -479,7 +465,6 @@
     position: relative;
   }
 
-  /* Gold top bar */
   .ach-mob-label::before {
     content: '';
     position: absolute;
@@ -512,18 +497,16 @@
     background-clip: text;
   }
 
-  /* Underline under section name — centered */
   .ach-mob-label .ach-header-underline {
     width: 48px;
     height: 3px;
     background: var(--grad-gold);
     border-radius: 2px;
-    margin: 0.45rem auto 0; /* auto = centered */
+    margin: 0.45rem auto 0;
     display: block;
     flex-shrink: 0;
   }
 
-  /* Description text under underline — centered */
   .ach-mob-label p {
     font-size: 0.8rem;
     color: var(--text-muted);
@@ -535,16 +518,13 @@
   }
 
   /* ── Card wrapper ──────────────────────────────────── */
-  /* Full viewport width, section bg, zero gap between cards */
   .ach-mob-card-wrap {
     width: 100%;
     box-sizing: border-box;
-    /* padding gives breathing room inside the bg color */
     padding: 0.75rem 1rem 0;
     margin: 0;
   }
 
-  /* Last card in each section: extra bottom padding */
   .ach-mob-card-wrap:last-of-type {
     padding-bottom: 0.75rem;
   }
@@ -552,31 +532,287 @@
   .ach-mob-bg-s2 { background: var(--bg-2); }
   .ach-mob-bg-s3 { background: var(--bg-3); }
 
-  /* Card itself — full width of wrapper */
+  /* ── Card item ─────────────────────────────────────── */
   .ach-mob-card-item {
     width: 100%;
     max-width: 100%;
     margin: 0;
     display: block;
     border-radius: 14px;
+    overflow: hidden;
   }
 
-  /* Mobile card image */
+  /* IMAGE — auto height, full visible, no crop */
   .ach-mob-card-item .ach-card-img-wrap {
-    height: 440px;
+    width: 100%;
+    height: auto;          /* auto = image decides height, nothing cut */
+    overflow: hidden;
   }
 
   .ach-mob-card-item .ach-card-img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;          /* natural aspect ratio — full image visible */
+    object-fit: contain;   /* contain = no crop, entire image shows */
     object-position: center top;
+    display: block;
   }
 
-  /* Card body center align */
+  /* Card body */
   .ach-mob-card-item .ach-card-body {
     text-align: center;
     padding: 0.9rem 1rem;
+  }
+
+  .ach-mob-card-item .ach-card-body h4 {
+    font-size: 0.92rem;
+  }
+
+  .ach-mob-card-item .ach-card-text {
+    font-size: 0.76rem;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════
+   MOBILE — 426px to 768px
+   ═══════════════════════════════════════════════════════ */
+@media (max-width: 768px) and (min-width: 426px) {
+  .ach-mob-hero {
+    padding: 40px 1.25rem 2.5rem;
+    gap: 1.5rem;
+  }
+
+  .ach-mob-hero-text h1 {
+    font-size: 1.75rem;
+  }
+
+  .ach-mob-hero-text p {
+    font-size: 0.84rem;
+  }
+
+  .ach-mob-hero-img {
+    width: calc(100% - 2.5rem);
+    max-width: 400px;
+    border-radius: 13px;
+  }
+
+  .ach-mob-label {
+    padding: 1.5rem 1.25rem 1.1rem;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .ach-mob-label h2 {
+    font-size: 1.25rem;
+  }
+
+  .ach-mob-label p {
+    font-size: 0.79rem;
+  }
+
+  .ach-mob-card-wrap {
+    padding: 0.75rem 1.25rem 0;
+  }
+
+  .ach-mob-card-wrap:last-of-type {
+    padding-bottom: 0.75rem;
+  }
+
+  .ach-mob-card-item .ach-card-img-wrap {
+    height: auto;
+  }
+
+  .ach-mob-card-item .ach-card-img {
+    height: auto;
+    object-fit: contain;
+  }
+
+  .ach-mob-card-item .ach-card-body {
+    padding: 0.85rem 1.1rem;
+  }
+
+  .ach-mob-card-item .ach-card-body h4 {
+    font-size: 0.9rem;
+  }
+
+  .ach-mob-card-item .ach-card-text {
+    font-size: 0.75rem;
+  }
+
+  .ach-badge {
+    font-size: 0.67rem;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════
+   MOBILE — 425px (max-width: 425px, min-width: 321px)
+   ═══════════════════════════════════════════════════════ */
+@media (max-width: 425px) and (min-width: 321px) {
+  .ach-mob-hero {
+    padding: 36px 0.9rem 2rem;
+    gap: 1.2rem;
+    min-height: 100dvh;
+  }
+
+  .ach-mob-hero-text h1 {
+    font-size: 1.55rem;
+  }
+
+  .ach-mob-hero-text p {
+    font-size: 0.8rem;
+  }
+
+  .ach-mob-divider {
+    width: 42px;
+  }
+
+  .ach-mob-hero-img {
+    width: calc(100% - 1.8rem);
+    max-width: 340px;
+    border-radius: 12px;
+  }
+
+  .ach-mob-label {
+    padding: 1.3rem 0.9rem 1rem;
+    border-radius: 18px 18px 0 0;
+  }
+
+  .ach-mob-label h2 {
+    font-size: 1.15rem;
+  }
+
+  .ach-mob-label .ach-header-underline {
+    width: 42px;
+  }
+
+  .ach-mob-label p {
+    font-size: 0.76rem;
+    padding: 0 0.3rem;
+  }
+
+  .ach-mob-card-wrap {
+    padding: 0.65rem 0.9rem 0;
+  }
+
+  .ach-mob-card-wrap:last-of-type {
+    padding-bottom: 0.65rem;
+  }
+
+  /* Full image visible — no fixed height, no crop */
+  .ach-mob-card-item .ach-card-img-wrap {
+    height: auto;
+  }
+
+  .ach-mob-card-item .ach-card-img {
+    height: auto;
+    object-fit: contain;
+  }
+
+  .ach-mob-card-item .ach-card-body {
+    padding: 0.8rem 0.9rem;
+  }
+
+  .ach-mob-card-item .ach-card-body h4 {
+    font-size: 0.87rem;
+  }
+
+  .ach-mob-card-item .ach-card-text {
+    font-size: 0.73rem;
+    margin: 0.2rem 0 0.4rem;
+  }
+
+  .ach-badge {
+    font-size: 0.64rem;
+    padding: 0.17rem 0.65rem;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════
+   MOBILE — 320px (max-width: 320px)
+   ═══════════════════════════════════════════════════════ */
+@media (max-width: 320px) {
+  .ach-mob-hero {
+    padding: 30px 0.7rem 1.8rem;
+    gap: 1rem;
+    min-height: 100dvh;
+  }
+
+  .ach-mob-hero-text h1 {
+    font-size: 1.3rem;
+  }
+
+  .ach-mob-hero-text p {
+    font-size: 0.75rem;
+  }
+
+  .ach-mob-divider {
+    width: 36px;
+    height: 2px;
+  }
+
+  .ach-mob-hero-img {
+    width: calc(100% - 1.4rem);
+    max-width: 280px;
+    border-radius: 10px;
+  }
+
+  .ach-mob-label {
+    padding: 1.1rem 0.7rem 0.9rem;
+    border-radius: 16px 16px 0 0;
+  }
+
+  .ach-mob-label h2 {
+    font-size: 1rem;
+  }
+
+  .ach-mob-label .ach-header-underline {
+    width: 36px;
+    height: 2px;
+    margin-top: 0.35rem;
+  }
+
+  .ach-mob-label p {
+    font-size: 0.7rem;
+    margin-top: 0.4rem;
+    padding: 0 0.2rem;
+  }
+
+  .ach-mob-card-wrap {
+    padding: 0.5rem 0.7rem 0;
+  }
+
+  .ach-mob-card-wrap:last-of-type {
+    padding-bottom: 0.5rem;
+  }
+
+  /* Full image visible — no fixed height, no crop */
+  .ach-mob-card-item .ach-card-img-wrap {
+    height: auto;
+  }
+
+  .ach-mob-card-item .ach-card-img {
+    height: auto;
+    object-fit: contain;
+  }
+
+  .ach-mob-card-item {
+    border-radius: 12px;
+  }
+
+  .ach-mob-card-item .ach-card-body {
+    padding: 0.7rem 0.75rem;
+  }
+
+  .ach-mob-card-item .ach-card-body h4 {
+    font-size: 0.82rem;
+  }
+
+  .ach-mob-card-item .ach-card-text {
+    font-size: 0.68rem;
+    margin: 0.18rem 0 0.35rem;
+  }
+
+  .ach-badge {
+    font-size: 0.6rem;
+    padding: 0.14rem 0.55rem;
   }
 }
 

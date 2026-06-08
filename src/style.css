@@ -2455,7 +2455,7 @@ cs-root {
   width: 70px;
   height: 4px;
   background: var(--gold);
-  margin: 20px auto 0;
+  margin: 20px auto 10px ;
   border-radius: 20px;
 }
 

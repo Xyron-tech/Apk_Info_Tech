@@ -158,7 +158,7 @@ const Footer = () => {
 
                     <div className="footer-socials">
 
-                        <a href="https://www.instagram.com/apk_infotech?igsh=d2s5enZyYmE4aW1m" className="social-link">
+                        <a href="https://www.instagram.com/apk_infotech?igsh=d2s5enZyYmE4aW1m " className="social-link">
 
                             <InstagramOutlined />
 
@@ -171,7 +171,7 @@ const Footer = () => {
                         </a>
 
                         <a
-                            href="https://wa.me/918939410255"
+                            href="https://chat.whatsapp.com/DHsSv4faUAU9IzSBRJWKiy"
                             className="social-link"
                             target="_blank"
                             rel="noopener noreferrer"
